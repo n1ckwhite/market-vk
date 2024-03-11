@@ -14,7 +14,7 @@ module.exports = {
   settings: {
       'import/resolver': {
           typescript: {
-              alwaysTryTypes: true, // Например `@types/yandex-maps` без этого нормально не проверяется
+              alwaysTryTypes: true,
           },
       },
   },
@@ -39,43 +39,38 @@ module.exports = {
       sourceType: 'module',
   },
   rules: {
-      // 0 = off, 1 = warn, 2 = error
-      'no-duplicate-imports': 1, // убираем дубли импортов
-      'import/exports-last': 0, // не требуем экспорты в конце файла
-      'import/extensions': 0, // отключаем расширения файлов кроме assets
-      'import/imports-first': 1, // требуем импорты вначале файла
-      'import/no-duplicates': 0, // Импорты вида `date-fns` и `date-fns/locale/ru` рассматриваются как дубли. Отключаем
-      'import/prefer-default-export': 0, // не требуем default экспорты
-      'import/newline-after-import': 1, // отделяем блок с импортами пустой строкой
+      'no-duplicate-imports': 1,
+      'import/exports-last': 0,
+      'import/extensions': 0,
+      'import/imports-first': 1,
+      'import/no-duplicates': 0,
+      'import/prefer-default-export': 0,
+      'import/newline-after-import': 1,
       'import/order': [
           1,
           {
-              'newlines-between': 'always', // группы разделяются строкой
+              'newlines-between': 'always',
               groups: ['builtin', 'external', 'type', 'internal', 'parent', 'sibling', 'index', 'object'],
           },
       ],
-      semi: [2, 'never'], // убираем semi
+      semi: [2, 'never'],
       'no-extra-semi': 0,
-      '@typescript-eslint/ban-ts-comment': 0, // да, ts-ignore писать не надо, но бывают исключения, не хотим в подобных случаях ещё и eslint отключать
+      '@typescript-eslint/ban-ts-comment': 0,
       '@typescript-eslint/no-extra-semi': 2,
       '@typescript-eslint/padding-line-between-statements': [
           'error',
           { "blankLine": 'always', "prev": "*", "next": "return" },
           { "blankLine": 'always', "prev": "*", "next": "if" }
-      ], // отступы перед return и if (https://eslint.org/docs/latest/rules/padding-line-between-statements)
+      ],
       '@typescript-eslint/semi': [2, 'never'],
-      'unicorn/no-empty-file': 1, // не используем пустые файлы
-      // Не мутируем входные параметры. Исключения - draft в immer и acc в Array.reduce()
+      'unicorn/no-empty-file': 1,
       'no-param-reassign': [2, { props: true, ignorePropertyModificationsFor: ['draft', 'acc', 'state'] }],
-      'react/display-name': 0, // Используем displayName в memo
-      // пустая строка между тегами в вёрстке, плохо дружит с prettier
-      // (https://github.com/jsx-eslint/eslint-plugin-react/issues/2793)
-      // 'react/jsx-newline': 'error',
+      'react/display-name': 0,
       'react/jsx-props-no-spreading': 0,
-      'react/jsx-sort-props': [2, { callbacksLast: true }], // хотим стандарт сортировки, пусть дефолт - алфавит, главное колбеки в конце
-      'react/prop-types': 0, // не используем propTypes
-      'react/react-in-jsx-scope': 0, // для React 17+ не актуально (https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#removing-unused-react-imports)
-      'react/require-default-props': 0, // не требуем default props, потому что проверяем типы с помощью typescript
+      'react/jsx-sort-props': [2, { callbacksLast: true }],
+      'react/prop-types': 0,
+      'react/react-in-jsx-scope': 0,
+      'react/require-default-props': 0,
       'react/function-component-definition': [
           2,
           {
@@ -105,33 +100,39 @@ module.exports = {
           },
       ],
       'max-len': ["error", { "code": 120 }],
-      'max-lines': [2, 300], // хотим иметь небольшие файлы, max 300 строк
-      'sonarjs/no-duplicate-string': 0, // не хотим жёстко выносить в переменные дубликаты строк
-      'unicorn/consistent-destructuring': 0, // не требуем деструктуризацию, иногда без неё получается компактнее
-      'unicorn/expiring-todo-comments': 0, // работает не стабильно, проще отказаться
-      'unicorn/filename-case': 0, // не имеем единого кейса для всех файлов
-      'unicorn/no-array-for-each': 0, // не хотим принудительно использовать for .. of, вместо forEach
-      'unicorn/no-document-cookie': 0, // не хотим предупреждения про использование document.cookie
-      'unicorn/prefer-dom-node-text-content': 0, // понимаем чем отличается innerText от textContent, нам нужен именно innerText
-      'unicorn/prefer-set-has': 0, // не хотим использовать Set-ы, в кейсах где достаточно массивов и объектов
-      'unicorn/no-array-reduce': 0, // мнения разделились, но наибольшая часть предпочитает использовать reduce, чем стараться его избегать
-      'unicorn/no-null': 0, // не хотим заменять null на undefined
-      'unicorn/number-literal-case': 0, // используем правило от prettier
-      'unicorn/explicit-length-check': 0, // не хотим всегда проверять length
-      'unicorn/consistent-function-scoping': 0, // пока не хотим, потому что, например заставляет выкидывать из скоупа компонента хендлеры отправки событий
-      'unicorn/prefer-node-protocol': 0, // не на всех кейсах хорошо работает
-      'unicorn/prefer-object-from-entries': 0, // не хотим Object.fromEntries вместо reduce, далеко не всегда это удобно
-      'unicorn/prevent-abbreviations': 0, // не хотим писать полные слова вместо устоявшихся аббревиатур arr => array, props - properties и т.п.
-      'unicorn/switch-case-braces': 0, // не хотим каждый case в switch оборачивать в блок {}
-      'unicorn/text-encoding-identifier-case': 0, // не хотим везде charset utf-8 заменять на utf8, иногда это невалидное значение
-      'unicorn/no-array-callback-reference': 0, // не хотим везде charset utf-8 заменять на utf8, иногда это невалидное значение
+      'max-lines': [2, 300],
+      'sonarjs/no-duplicate-string': 0,
+      'unicorn/consistent-destructuring': 0,
+      'unicorn/expiring-todo-comments': 0,
+      'unicorn/filename-case': 0,
+      'unicorn/no-array-for-each': 0,
+      'unicorn/no-document-cookie': 0,
+      'unicorn/prefer-dom-node-text-content': 0,
+      'unicorn/prefer-set-has': 0,
+      'unicorn/no-array-reduce': 0,
+      'unicorn/no-null': 0,
+      'unicorn/number-literal-case': 0,
+      'unicorn/explicit-length-check': 0,
+      'unicorn/consistent-function-scoping': 0,
+      'unicorn/prefer-node-protocol': 0,
+      'unicorn/prefer-object-from-entries': 0,
+      'unicorn/prevent-abbreviations': 0,
+      'unicorn/text-encoding-identifier-case': 0,
+      'unicorn/no-array-callback-reference': 0,
       'react/button-has-type': 0,
       'jsx-a11y/control-has-associated-label': 0,
       'jsx-a11y/no-autofocus': 0,
       'no-restricted-exports': 0,
       'no-console': ["error", { allow: ["warn", "error"] }],
       'jsx-a11y/label-has-associated-control': 0,
-      'import/no-extraneous-dependencies': ["error", {"devDependencies": ["vite.config.ts"]}],
-      'import/no-cycle': 0 // разрешаю циклические зависимости
+      "import/no-extraneous-dependencies": [
+          "off",
+          {
+              "devDependencies": true,
+              "optionalDependencies": true,
+              "peerDependencies": true,
+          }
+      ],
+      'import/no-cycle': 0
   },
 }
