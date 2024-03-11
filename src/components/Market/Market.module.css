@@ -1,6 +1,15 @@
 .market {
-    border: 1px solid red;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+}
+
+
+.wrapper {
+    padding: var(--px-20);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 3;
 }

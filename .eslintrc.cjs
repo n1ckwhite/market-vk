@@ -56,6 +56,7 @@ module.exports = {
       semi: [2, 'never'],
       'no-extra-semi': 0,
       '@typescript-eslint/ban-ts-comment': 0,
+      'consistent-return': 0,
       '@typescript-eslint/no-extra-semi': 2,
       '@typescript-eslint/padding-line-between-statements': [
           'error',

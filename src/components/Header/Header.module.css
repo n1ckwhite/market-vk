@@ -1,6 +1,6 @@
 .header {
     background: var(--color-blue);
     color: var(--color-white);
-    padding: 20px;
+    padding: var(--px-20);
     box-sizing: border-box;
 }

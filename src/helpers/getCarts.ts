@@ -1,12 +1,11 @@
-import { API } from '@/constans/endpoint'
-import { checkResponse } from '@/helpers/checkResponse'
+import { API } from '../constans/endpoint'
 
-export const searchUsers = async (name: string) => {
-  const response = await fetch(`${API}=${name}`)
+import { checkResponse } from './checkResponse'
+
+export const getCarts = async () => {
+  const response = await fetch(`${API}/1`)
 
   if (response) {
     return checkResponse(response)
   }
-
-  return null
 }
