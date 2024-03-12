@@ -1,4 +1,10 @@
 .basket {
-    background: var(--color-black);
-    color: var(--color-white);
+  flex: 1;
+}
+
+@media screen and (max-width: 780px) {
+  .basket {
+    display: none;
+  }
+
 }

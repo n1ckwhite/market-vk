@@ -1,0 +1,29 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-blue);
+  color: var(--color-white);
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-weight: bold;
+  transition: .2s;
+  height: 32px;
+}
+
+.btn:hover {
+  background: var(--color-blue-hover);
+}
+
+.btn:active {
+  background: var(--color-blue-active);
+}
+
+.btn:disabled {
+  background: var(--color-silver);
+}
+
+.btn__32 {
+  width: 32px;
+}

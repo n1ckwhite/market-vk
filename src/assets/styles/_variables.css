@@ -1,6 +1,11 @@
 :root {
     --color-blue: rgba(64, 119, 243, 1);
+    --color-blue-hover: rgb(31, 79, 189);
+    --color-blue-active: rgb(17, 53, 126);
+    --color-orange: #d28d16;
+    --color-green: #217a08;
     --color-white: #fff;
     --color-black: #000;
+    --color-silver: #ddd;
     --px-20: 20px;
 }

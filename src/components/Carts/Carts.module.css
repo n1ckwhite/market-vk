@@ -1,8 +1,13 @@
 .carts {
-    padding: var(--px-20);
     box-sizing: border-box;
     display: flex;
+    align-items: flex-start;
     gap: var(--px-20);
     flex-wrap: wrap;
-    border: 1px solid red;
+}
+
+@media screen and (max-width: 780px) {
+  .carts {
+    justify-content: center;
+  }
 }

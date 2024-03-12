@@ -46,6 +46,8 @@ module.exports = {
       'import/no-duplicates': 0,
       'import/prefer-default-export': 0,
       'import/newline-after-import': 1,
+      'no-shadow': 0,
+      '@typescript-eslint/no-shadow': 0,
       'import/order': [
           1,
           {

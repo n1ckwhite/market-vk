@@ -17,7 +17,6 @@ export const Market: FC = () => {
         <Loading />
         <Carts />
       </div>
-
       <Basket />
     </div>
 

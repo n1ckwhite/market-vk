@@ -1,18 +1,14 @@
 import { FC } from 'react'
 
+import { ICart } from '@/types'
+
+import { SwitchButton } from '../../SwitchButton'
+import { Button } from '../../Button'
+
 import s from './Cart.module.css'
 
-interface ICartProps {
-  id : number,
-  price:number,
-  quantity : number,
-  thumbnail: string,
-  title : string,
-}
-
-export const Cart: FC<ICartProps> = (props) => {
+export const Cart: FC<ICart> = (props) => {
   const {
-    id,
     price,
     quantity,
     thumbnail,
@@ -21,16 +17,17 @@ export const Cart: FC<ICartProps> = (props) => {
 
   return (
     <div className={s.cart}>
-      <p className={s.cart__title}>{title}</p>
       <img alt={title} className={s.cart__img} loading="lazy" src={thumbnail} />
+      <p className={s.cart__title}>{title}</p>
       <p className={s.cart__quantity}>
         Колличество:
         <span className={s.cart__quantity_span}>{quantity}</span>
       </p>
       <p className={s.cart__price}>
-        Цена:
-        <span className={s.cart__price_span}>{price}</span>
+        {`${price} ₽`}
       </p>
+      <Button txt="Купить" />
+      <SwitchButton initCount={5} />
     </div>
   )
 }
