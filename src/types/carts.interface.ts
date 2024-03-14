@@ -1,7 +1,7 @@
-import { IProduct } from '@/types'
+import { IProduct, TProductId } from '@/types'
 
 export interface ICarts {
-  id: number;
+  id: TProductId;
   products: IProduct[]
   total: number,
   discountedTotal: number,

@@ -48,6 +48,7 @@ module.exports = {
       'import/newline-after-import': 1,
       'no-shadow': 0,
       '@typescript-eslint/no-shadow': 0,
+      'no-return-assign': 0,
       'import/order': [
           1,
           {

@@ -1,0 +1,21 @@
+.basket {
+  margin-top: 50px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  height: 100vh;
+  padding:var(--px-10);
+  box-sizing: border-box;
+  gap: var(--px-10);
+}
+
+
+@media screen and (max-width: 640px) {
+  .basket {
+    display: none;
+  }
+}

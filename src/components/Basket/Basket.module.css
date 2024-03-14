@@ -1,10 +1,3 @@
-.basket {
-  flex: 1;
-}
-
-@media screen and (max-width: 780px) {
-  .basket {
-    display: none;
-  }
-
+.basket__li {
+  width: 100%;
 }

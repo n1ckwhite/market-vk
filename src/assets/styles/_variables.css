@@ -6,6 +6,7 @@
     --color-green: #217a08;
     --color-white: #fff;
     --color-black: #000;
-    --color-silver: #ddd;
-    --px-20: 20px;
+    --px-10: 10px;
+    --px-80: 80px;
+    --color-silver: rgb(232, 232, 232);
 }

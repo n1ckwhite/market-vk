@@ -1,24 +1,25 @@
 import { FC } from 'react'
 import { useSelector } from 'react-redux'
 
-import { cartsState } from '../../service'
+import { cartsState } from '@/service'
+import { BasketCart } from '@/components/BasketCart'
+import { PriceText } from '@/components/PriceText'
 
-import { BasketCart } from './components/BasketCart'
 import s from './Basket.module.css'
 
 export const Basket: FC = () => {
-  const data = useSelector(cartsState)
+  const { basket } = useSelector(cartsState)
 
-  if (data.status === 'fulfilled') {
+  if (basket.totalPrice !== 0) {
     return (
       <ul className={s.basket}>
-        {data.data.products.map((cart) => (
-          <li key={cart.id}>
+        {basket.data.map((cart) => (
+          <li className={s.basket__li} key={cart.id}>
             <BasketCart {...cart} />
           </li>
         ))}
+        <PriceText />
       </ul>
-
     )
   }
 }

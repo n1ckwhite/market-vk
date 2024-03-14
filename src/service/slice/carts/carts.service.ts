@@ -1,5 +1,5 @@
-import { ICarts } from '../../types'
-import { getCarts } from '../../helpers/getCarts'
+import { getCarts } from '@/helpers'
+import { ICarts } from '@/types'
 
 interface ICartsService {
   getCartsService: () => Promise<ICarts>;

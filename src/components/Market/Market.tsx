@@ -1,11 +1,12 @@
 import { FC } from 'react'
 
-import { Loading } from '../Loading'
-import { getCartsThunk, useAppDispatch } from '../../service'
-import { Carts } from '../Carts'
-import { Basket } from '../Basket'
+import { getCartsThunk, useAppDispatch } from '@/service'
+
+import { BasketModal } from '../BasketModal'
 
 import s from './Market.module.css'
+import { MarketWrapper } from './components/MarketWrapper'
+import { MarketPurchasedCarts } from './components/MarketPurchasedCarts'
 
 export const Market: FC = () => {
   const dispatch = useAppDispatch()
@@ -13,11 +14,9 @@ export const Market: FC = () => {
 
   return (
     <div className={s.market}>
-      <div className={s.wrapper}>
-        <Loading />
-        <Carts />
-      </div>
-      <Basket />
+      <MarketWrapper />
+      <MarketPurchasedCarts />
+      <BasketModal />
     </div>
 
   )

@@ -1,6 +1,13 @@
 .header {
+    position: fixed;
+    width: 100vw;
+    height: 50px;
     background: var(--color-blue);
     color: var(--color-white);
-    padding: var(--px-20);
+    padding: var(--px-10);
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+

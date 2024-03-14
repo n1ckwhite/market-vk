@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { useSelector } from 'react-redux'
 
-import { cartsState } from '../../service'
+import { cartsState } from '@/service'
 
 import { Cart } from './components/Cart'
 import s from './Carts.module.css'

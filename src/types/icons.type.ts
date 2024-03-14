@@ -1,1 +1,1 @@
-export type TIcon = 'trash'
+export type TIcon = 'trash' | 'basket' | 'close'

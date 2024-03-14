@@ -1,4 +1,4 @@
-import { API } from '../constans/endpoint'
+import { API } from '@/constans/endpoint'
 
 import { checkResponse } from './checkResponse'
 

@@ -1,29 +1,29 @@
-import { FC, useState } from 'react'
+import { FC } from 'react'
 
-import { Button } from '../Button'
+import { ICartBasket } from '@/types'
+import { plusCartTotalReducer, minusCartTotalReducer, useAppDispatch } from '@/service'
+import { Button } from '@/components/Button'
 
 import s from './SwitchButton.module.css'
 
 interface ISwitchButton {
-  initCount?: number
+  cart: ICartBasket
 }
 
-export const SwitchButton: FC<ISwitchButton> = ({ initCount = 0 }) => {
-  const [count, setCount] = useState(initCount)
+export const SwitchButton: FC<ISwitchButton> = ({ cart }) => {
+  const dispatch = useAppDispatch()
   const minusCount = () => {
-    setCount((count) => count - 1)
+    dispatch(minusCartTotalReducer(cart))
   }
   const plusCount = () => {
-    setCount((count) => count + 1)
+    dispatch(plusCartTotalReducer(cart))
   }
 
-  if (count !== 0) {
-    return (
-      <div className={s.flex}>
-        <Button size="32" txt="-" onClick={minusCount} />
-        <p className={s.count}>{count}</p>
-        <Button size="32" txt="+" onClick={plusCount} />
-      </div>
-    )
-  }
+  return (
+    <div className={s.flex}>
+      <Button bg="blue" size="32" txt="-" onClick={minusCount} />
+      <p className={s.count}>{cart.total}</p>
+      <Button bg="blue" size="32" txt="+" onClick={plusCount} />
+    </div>
+  )
 }
