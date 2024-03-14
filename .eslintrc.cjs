@@ -68,6 +68,8 @@ module.exports = {
       ],
       '@typescript-eslint/semi': [2, 'never'],
       'unicorn/no-empty-file': 1,
+      'unicorn/import-style': 1,
+      'unicorn/prefer-module': 1,
       'no-param-reassign': [2, { props: true, ignorePropertyModificationsFor: ['draft', 'acc', 'state'] }],
       'react/display-name': 0,
       'react/jsx-props-no-spreading': 0,
