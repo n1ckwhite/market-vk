@@ -10,7 +10,7 @@ export const PriceText: FC = () => {
 
   if (basket.totalPrice !== 0) {
     return (
-      <p>
+      <p className={s.basket_text}>
         Цена:
         <span className={s.basket__price}>{`${basket.totalPrice} ₽`}</span>
       </p>

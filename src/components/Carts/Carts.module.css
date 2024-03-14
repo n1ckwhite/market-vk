@@ -1,9 +1,10 @@
 .carts {
     box-sizing: border-box;
     display: flex;
+    justify-content: flex-start;
     align-items: flex-start;
-    gap: var(--px-10);
     flex-wrap: wrap;
+    gap: var(--px-10);
 }
 
 @media screen and (max-width: 780px) {

@@ -1,9 +1,9 @@
 .cart {
   max-width: 200px;
+  min-height: 292px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: var(--px-10);
   padding: var(--px-10);

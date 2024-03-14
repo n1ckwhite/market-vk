@@ -2,6 +2,7 @@
   margin-top: 50px;
   position: sticky;
   top: 50px;
+  height: 100%;
   display: flex;
   z-index: 1;
   background: var(--color-white);

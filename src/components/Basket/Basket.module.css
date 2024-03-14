@@ -1,3 +1,7 @@
+
+.basket {
+  box-sizing: border-box;
+}
 .basket__li {
   width: 100%;
 }
