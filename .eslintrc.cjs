@@ -49,6 +49,7 @@ module.exports = {
       'no-shadow': 0,
       '@typescript-eslint/no-shadow': 0,
       'no-return-assign': 0,
+      'unicorn/no-empty-file': 0,
       'import/order': [
           1,
           {
@@ -67,9 +68,8 @@ module.exports = {
           { "blankLine": 'always', "prev": "*", "next": "if" }
       ],
       '@typescript-eslint/semi': [2, 'never'],
-      'unicorn/no-empty-file': 1,
-      'unicorn/import-style': 1,
-      'unicorn/prefer-module': 1,
+      'unicorn/import-style': 0,
+      'unicorn/prefer-module': 0,
       'no-param-reassign': [2, { props: true, ignorePropertyModificationsFor: ['draft', 'acc', 'state'] }],
       'react/display-name': 0,
       'react/jsx-props-no-spreading': 0,
