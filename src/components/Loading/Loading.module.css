@@ -1,4 +1,8 @@
 .lds_dual_ring {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
     width: var(--px-80);
     height: var(--px-80);
 }

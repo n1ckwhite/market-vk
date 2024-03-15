@@ -1,4 +1,4 @@
-import { TProductId } from '@/types/product.id'
+import { TProductId } from '@/types'
 
 export interface ICart {
   id: TProductId,

@@ -1,11 +1,6 @@
-import { TProductId } from '@/types/product.id'
+import { ICart } from '@/types/'
 
-export interface ICartBasket {
-  id:TProductId
-  title: string;
-  quantity: number;
-  thumbnail: string;
-  price: number;
+export interface ICartBasket extends ICart {
   total: number;
   totalPrice: number;
 }
